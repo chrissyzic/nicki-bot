@@ -12,8 +12,8 @@ inquiry = raw_input('What song do you want to hear Nicki on? ')
 inquiry = inquiry.lower()
 
 for title in d:
-    if inquiry == title:
-        print d[title]
+    if inquiry == title.lower():
+        print "Nicki's verse starts at {0}".format(d[title])
 '''
 
 #This looks at a CSV with only two columns (song title and beginning time stamp) because it's less complicated than the full database
@@ -31,5 +31,5 @@ inquiry = inquiry.lower()
 
 for title in d:
     if inquiry == title:
-        print d[title]
+        print "Nicki's verse starts at {0}".format(d[title])
 '''
