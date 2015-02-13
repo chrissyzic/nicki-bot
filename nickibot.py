@@ -27,6 +27,7 @@ for song in catalog:
     d[title] = stamp_start
 
 inquiry = raw_input('What song do you want to hear Nicki on? ')
+inquiry = inquiry.lower()
 
 for title in d:
     if inquiry == title:
