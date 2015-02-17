@@ -1,6 +1,32 @@
+#Tweepy Authentication which I'm still working on
+'''
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+ 
+import tweepy, time, sys
+ 
+#argfile = str(sys.argv[1])
+ 
+#enter the corresponding information from your Twitter application:
+CONSUMER_KEY = 'PovhK4aHDelhIyUik2ZWdBGaY'#keep the quotes, replace this with your consumer key
+CONSUMER_SECRET = 'YldiYzIHHH9p5tR8cGE1pxPXYekBKo9BrKkEx3sHFBYacVF5TI'#keep the quotes, replace this with your consumer secret key
+ACCESS_TOKEN = '14179427-lIMfeenl91SEDNo2VQAYMpqrwfSjvpt8ENBIsw2Gp'#keep the quotes, replace this with your access token
+ACCESS_SECRET = 'jYaRsnDc6NDsHxhiqEnKovjja1xGR1TpAhhueZrxLxQ0R'#keep the quotes, replace this with your access token secret
+auth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
+auth.set_access_token(ACCESS_TOKEN, ACCESS_SECRET)
+api = tweepy.API(auth)
+api.update_status("hello world!")
 
-#Ambitious Version
-
+# filename=open(argfile,'r')
+# f=filename.readlines()
+# filename.close()
+ 
+# for line in f:
+	# api = tweepy.API(auth)
+	# api.update_status(line)
+	# time.sleep(900)#Tweet every 15 minutes
+'''	
+	
 #Import Python's CSV functions
 import csv
 import random
@@ -9,7 +35,7 @@ import random
 catalog = csv.reader(open('timestamps.csv', 'r'))
 d = {}
 
-#In dictionary d, save each song title as a key and the timestamp data (verse start and verse end) and YouTube link as values associated with each key.
+#In dictionary d, save each song title in "catalog" as a key and the timestamp data (verse start and verse end) and YouTube link as values associated with each key.
 for song in catalog:
     title, stamp_start, stamp_end, spotify, youtube = song
     d[title] = stamp_start, stamp_end, spotify, youtube
@@ -25,10 +51,11 @@ if request.lower() == "random":
 else:
     for title in d: #Iterate through all the keys in dictionary "d"
         if request.lower() == title.lower(): #If the request matches a key, return a YouTube link timestamped for when Nicki's verse starts
-            if d[title][0] == "0:00": #If her verse starts right at the beginning of the song, just share the bare YouTube link
+            if d[title][0] == "0:00": #If her verse starts right at the beginning of the song, just share the bare YouTube link with no timestamp
                 print "Here's Nicki's verse on {0}: {1}".format(title, d[title][3])
             else:
                 print "Here's Nicki's verse on {0}: http://youtu.be/{1}?t={2}m{3}s".format(title, d[title][3][32:], d[title][0][0], d[title][0][2:])
+
 '''
 
 #This uses a CSV with only two columns (song title and beginning time stamp). It only returns the start time of the verse, does not include a link to the veres on YouTube.
