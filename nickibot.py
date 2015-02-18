@@ -15,7 +15,7 @@ ACCESS_SECRET = 'jYaRsnDc6NDsHxhiqEnKovjja1xGR1TpAhhueZrxLxQ0R'#keep the quotes,
 auth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
 auth.set_access_token(ACCESS_TOKEN, ACCESS_SECRET)
 api = tweepy.API(auth)
-api.update_status("hello world!")
+api.update_status(status="hello world!")
 
 # filename=open(argfile,'r')
 # f=filename.readlines()
@@ -23,7 +23,7 @@ api.update_status("hello world!")
  
 # for line in f:
 	# api = tweepy.API(auth)
-	# api.update_status(line)
+	# api.update_status(status=line)
 	# time.sleep(900)#Tweet every 15 minutes
 '''	
 	
