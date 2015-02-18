@@ -1,5 +1,5 @@
-#Tweepy Authentication which I'm still working on
-'''
+#Tweepy Authentication
+
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
  
@@ -8,14 +8,14 @@ import tweepy, time, sys
 #argfile = str(sys.argv[1])
  
 #enter the corresponding information from your Twitter application:
-CONSUMER_KEY = 'PovhK4aHDelhIyUik2ZWdBGaY'#keep the quotes, replace this with your consumer key
-CONSUMER_SECRET = 'YldiYzIHHH9p5tR8cGE1pxPXYekBKo9BrKkEx3sHFBYacVF5TI'#keep the quotes, replace this with your consumer secret key
-ACCESS_TOKEN = '14179427-lIMfeenl91SEDNo2VQAYMpqrwfSjvpt8ENBIsw2Gp'#keep the quotes, replace this with your access token
-ACCESS_SECRET = 'jYaRsnDc6NDsHxhiqEnKovjja1xGR1TpAhhueZrxLxQ0R'#keep the quotes, replace this with your access token secret
+CONSUMER_KEY = 'Cn43n1RyUrETH7U0C5RbFPF2Y'#keep the quotes, replace this with your consumer key
+CONSUMER_SECRET = 'HJAuwmoB2qQHyL3Epf2o3ODVZy1hh2yK5wLPeaxZijjKy01J3C'#keep the quotes, replace this with your consumer secret key
+ACCESS_TOKEN = '3039118167-O9BtuQkx8miSIX37zCBahcJSk638lvHCRsFq8cC'#keep the quotes, replace this with your access token
+ACCESS_SECRET = 'd5yBodiwTPgCybFLO3agFJB5OpdiKxxrhdiPI8Zj6JMgi'#keep the quotes, replace this with your access token secret
 auth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
 auth.set_access_token(ACCESS_TOKEN, ACCESS_SECRET)
 api = tweepy.API(auth)
-api.update_status(status="hello world!")
+api.update_status(status="get ready world! nicki comin.")
 
 # filename=open(argfile,'r')
 # f=filename.readlines()
@@ -25,9 +25,9 @@ api.update_status(status="hello world!")
 	# api = tweepy.API(auth)
 	# api.update_status(status=line)
 	# time.sleep(900)#Tweet every 15 minutes
+
 '''	
-	
-#Import Python's CSV functions
+#Import Python's CSV and random functions
 import csv
 import random
 
@@ -56,7 +56,7 @@ else:
             else:
                 print "Here's Nicki's verse on {0}: http://youtu.be/{1}?t={2}m{3}s".format(title, d[title][3][32:], d[title][0][0], d[title][0][2:])
 
-'''
+
 
 #This uses a CSV with only two columns (song title and beginning time stamp). It only returns the start time of the verse, does not include a link to the veres on YouTube.
 
