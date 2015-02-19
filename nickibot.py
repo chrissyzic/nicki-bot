@@ -38,7 +38,7 @@ for mention in mentions:
     requester = mention.user.screen_name
 
 #The first part of this If statement will return a random song and corresponding link if the user types "random."
-if request.lower() == "random":
+if request.lower() == "shuffle":
     rand_song = random.choice(d.keys())
     api.update_status(status="@{0} Here's Nicki's verse on {1}: http://youtu.be/{2}?t={3}m{4}s".format(requester, rand_song, d[rand_song][3][32:], d[rand_song][0][0], d[rand_song][0][2:]))
 else:
