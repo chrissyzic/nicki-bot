@@ -26,9 +26,6 @@ for song in catalog:
     title, stamp_start, stamp_end, spotify, youtube = song
     d[title] = stamp_start, stamp_end, spotify, youtube
 
-#Ask the user what they want to hear.
-#request = raw_input('What song do you want to hear Nicki on? ')
-
 #Check my @ mentions
 mentions = api.mentions_timeline(count=1)
 
@@ -60,7 +57,8 @@ for song in catalog:
     title, stamp_start = song
     d[title] = stamp_start
 
-request = raw_input('What song do you want to hear Nicki on? ')
+#Ask the user what they want to hear.
+#request = raw_input('What song do you want to hear Nicki on? ')
 
 for title in d:
     if request.lower() == title.lower():
