@@ -1,5 +1,16 @@
 How do I make tweepy be OK with repeat tweets?
+It's actually probably good that it's not
+
 How do I check for unlimited mentions?
+Change the "1" at the end of this line: mentions = api.mentions_timeline(count=1)
+
 I assume I have to host these files on a serve to make them work? Help!
+
 How do I store my consumer key and secret securely on a server?
+
 Oh yeah, should I figure out how to follow anyone who tweets at me and/or mentions Nicki Minaj (latter might lead to spam issues)?
+Yes, but be careful because Twitter only lets you follow 2,000 people. The best solution is to unfollow people randomly.
+
+How do I ensure it doesn't keep trying to respond to the same person over and over?
+Tell Python: Show me mentions since this status ID.
+
