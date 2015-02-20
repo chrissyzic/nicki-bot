@@ -26,6 +26,12 @@ for song in catalog:
     title, stamp_start, stamp_end, spotify, youtube = song
     d[title] = stamp_start, stamp_end, spotify, youtube
 
+#Check for mentions since most recent status
+if most_recent:
+    mentions = api.mentions_timeline(since_id=most_recent)
+else:
+    mentions = ()
+
 #Check my @ mentions
 mentions = api.mentions_timeline(count=1)
 
@@ -33,6 +39,7 @@ mentions = api.mentions_timeline(count=1)
 for mention in mentions:
     request = mention.text[17:]
     requester = mention.user.screen_name
+
 
 #The first part of this If statement will return a random song and corresponding link if the user types "random."
 if request.lower() == "shuffle":
