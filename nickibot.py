@@ -2,18 +2,19 @@
 
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
- 
+
+#Import all the stuff from Tweepy I'll need
 import tweepy, time, sys
 
+#Import credentials to authenticate with Twitter - these are stored in another file because they are SECRET. If they were public, anyone could tweet from my account
 from nickibot_cred import CONSUMER_KEY, CONSUMER_SECRET, ACCESS_KEY, ACCESS_SECRET
 
+#Authenticate with Twitter
 auth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
 auth.set_access_token(ACCESS_KEY, ACCESS_SECRET)
 api = tweepy.API(auth)
 
-#Ambitious Version
-
-#Import Python's CSV functions
+#Import Python's CSV functions for file handling purposes and Python's random function for "Shuffle" requests
 import csv
 import random
 
@@ -44,14 +45,14 @@ for mention in mentions:
 #The first part of this If statement will return a random song and corresponding link if the user types "random."
 if request.lower() == "shuffle":
     rand_song = random.choice(d.keys())
-    api.update_status(status="@{0} SHUFFLE! Here's Nicki's verse on {1}: http://youtu.be/{2}?t={3}m{4}s".format(requester, rand_song, d[rand_song][3][32:], d[rand_song][0][0], d[rand_song][0][2:]))
+    api.update_status(status=".@{0} SHUFFLE! Here's Nicki's verse on {1}: http://youtu.be/{2}?t={3}m{4}s".format(requester, rand_song, d[rand_song][3][32:], d[rand_song][0][0], d[rand_song][0][2:]))
 else:
     for title in d: #Iterate through all the keys in dictionary "d"
         if request.lower() == title.lower(): #If the request matches a key, return a YouTube link timestamped for when Nicki's verse starts
             if d[title][0] == "0:00": #If her verse starts right at the beginning of the song, just share the bare YouTube link
-                api.update_status(status="@{0} Here's Nicki's verse on {1}: {2}".format(title, d[title][3]))
+                api.update_status(status=".@{0} Here's Nicki's verse on {1}: {2}".format(title, d[title][3]))
             else:
-                api.update_status(status="@{0} Here's Nicki's verse on {1}: http://youtu.be/{2}?t={3}m{4}s".format(requester, title, d[title][3][32:], d[title][0][0], d[title][0][2:]))
+                api.update_status(status=".@{0} Here's Nicki's verse on {1}: http://youtu.be/{2}?t={3}m{4}s".format(requester, title, d[title][3][32:], d[title][0][0], d[title][0][2:]))
 '''
 
 #This uses a CSV with only two columns (song title and beginning time stamp). It only returns the start time of the verse, does not include a link to the veres on YouTube.
