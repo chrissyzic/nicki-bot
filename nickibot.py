@@ -3,10 +3,10 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-#Import all the stuff from Tweepy I'll need
+#Import Tweepy (to authenticate with Twitter), Python's time and sys modules that Tweepy requires to run.
 import tweepy, time, sys
 
-#Import credentials to authenticate with Twitter - these are stored in another file because they are SECRET. If they were public, anyone could tweet from my account
+#Import credentials to authenticate with Twitter - these are stored in another file because they are SECRET. If they were public, anyone could tweet from my account.
 from nickibot_cred import CONSUMER_KEY, CONSUMER_SECRET, ACCESS_KEY, ACCESS_SECRET
 
 #Authenticate with Twitter
@@ -27,7 +27,7 @@ for song in catalog:
     title, stamp_start, stamp_end, spotify, youtube = song
     d[title] = stamp_start, stamp_end, spotify, youtube
 
-#Check for mentions since most recent status
+#Check for @ mentions since most recent status
 if most_recent:
     mentions = api.mentions_timeline(since_id=most_recent)
 else:
@@ -40,7 +40,6 @@ mentions = api.mentions_timeline(count=1)
 for mention in mentions:
     request = mention.text[17:]
     requester = mention.user.screen_name
-
 
 #The first part of this If statement will return a random song and corresponding link if the user types "random."
 if request.lower() == "shuffle":
