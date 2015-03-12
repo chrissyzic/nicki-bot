@@ -42,7 +42,7 @@ if most_recent:
     mentions = api.mentions_timeline(since_id=most_recent)
 else:
     mentions = ()
-
+'''
 new_most_recent = int(most_recent)
 
 print new_most_recent
@@ -50,21 +50,20 @@ print new_most_recent
 for mention in mentions:
     if mention.id > most_recent:
         most_recent = mention.id
+'''
 
-#Check my @ mentions
-#mentions = api.mentions_timeline(count=1)
-
-#Assign twitter handle and tweet contents to their own variables
+#Loop through list of mentions since last tweet and assign the user's twitter handle and tweet content to their own variables
 for mention in mentions:
     request = mention.text[17:]
     requester = mention.user.screen_name
 
-    #The first part of this If statement will return a random song and corresponding link if the user types "random."
+    #Check if the content of each tweet matches a song in the catalog.
+    #The first part of this If statement will return a random song and corresponding link if the user types "shuffle"
     if request.lower() == "shuffle":
         rand_song = random.choice(d.keys())
         api.update_status(status=".@{0} SHUFFLE! Here's Nicki's verse on {1}: http://youtu.be/{2}?t={3}m{4}s".format(requester, rand_song, d[rand_song][3][32:], d[rand_song][0][0], d[rand_song][0][2:]))
     else:
-        for title in d: #Iterate through all the keys in dictionary "d"
+        for title in d: #Iterate through all the keys (song titles) in dictionary "d"
             if request.lower() == title.lower(): #If the request matches a key, return a YouTube link timestamped for when Nicki's verse starts
                 if d[title][0] == "0:00": #If her verse starts right at the beginning of the song, just share the bare YouTube link
                     api.update_status(status=".@{0} Here's Nicki's verse on {1}: {2}".format(title, d[title][3]))
