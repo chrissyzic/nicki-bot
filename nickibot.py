@@ -45,9 +45,11 @@ else:
 
 new_most_recent = int(most_recent)
 
+print new_most_recent
+
 for mention in mentions:
-    if mention.id > new_most_recent:
-        new_most_recent = mention.id
+    if mention.id > most_recent:
+        most_recent = mention.id
 
 #Check my @ mentions
 #mentions = api.mentions_timeline(count=1)
