@@ -27,14 +27,30 @@ for song in catalog:
     title, stamp_start, stamp_end, spotify, youtube = song
     d[title] = stamp_start, stamp_end, spotify, youtube
 
-#Check for @ mentions since most recent status
+#Create an empty list to store status IDs
+statuses = []
+
+#Loop through all tweets in my timeline, store the status IDs as a list
+for status in api.user_timeline():
+    statuses.append(status.id)
+
+#Create a variable to hold most recent status ID
+most_recent = statuses[0]
+
+#Check for @ mentions since most recent status ID
 if most_recent:
     mentions = api.mentions_timeline(since_id=most_recent)
 else:
     mentions = ()
 
+new_most_recent = int(most_recent)
+
+for mention in mentions:
+    if mention.id > new_most_recent:
+        new_most_recent = mention.id
+
 #Check my @ mentions
-mentions = api.mentions_timeline(count=1)
+#mentions = api.mentions_timeline(count=1)
 
 #Assign twitter handle and tweet contents to their own variables
 for mention in mentions:
@@ -52,8 +68,9 @@ else:
                 api.update_status(status=".@{0} Here's Nicki's verse on {1}: {2}".format(title, d[title][3]))
             else:
                 api.update_status(status=".@{0} Here's Nicki's verse on {1}: http://youtu.be/{2}?t={3}m{4}s".format(requester, title, d[title][3][32:], d[title][0][0], d[title][0][2:]))
-'''
 
+                
+'''
 #This uses a CSV with only two columns (song title and beginning time stamp). It only returns the start time of the verse, does not include a link to the veres on YouTube.
 
 import csv
