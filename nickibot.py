@@ -1,4 +1,4 @@
-import os, site
+import os, site, sys
 # Tell wsgi to add the Python site-packages to its path. 
 site.addsitedir('/home/chrissyzic/.virtualenvs/nicki-bot/lib/python2.7/site-packages')
 
@@ -16,7 +16,7 @@ sys.path.append(workspace)
 # -*- coding: utf-8 -*-
 
 #Import Tweepy (to authenticate with Twitter), Python's time and sys modules that Tweepy requires to run.
-import tweepy, time, sys
+import tweepy, time
 
 #Import credentials to authenticate with Twitter - these are stored in another file because they are SECRET. If they were public, anyone could tweet from my account.
 from nickibot_cred import CONSUMER_KEY, CONSUMER_SECRET, ACCESS_KEY, ACCESS_SECRET
