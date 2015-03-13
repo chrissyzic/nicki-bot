@@ -1,3 +1,14 @@
+# Tell wsgi to add the Python site-packages to its path. 
+site.addsitedir('/home/chrissyzic/.virtualenvs/findnickisverse/lib/python2.7/site-packages')
+
+activate_this = os.path.expanduser("~/.virtualenvs/findnickisverse/bin/activate_this.py")
+execfile(activate_this, dict(__file__=activate_this))
+
+# Calculate the path based on the location of the WSGI script
+project = '/home/chrissyzic/webapps/findnickisverse/findnickisverse/'
+workspace = os.path.dirname(project)
+sys.path.append(workspace)
+
 #Tweepy Authentication
 
 #!/usr/bin/env python
