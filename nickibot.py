@@ -1,3 +1,4 @@
+import os, site
 # Tell wsgi to add the Python site-packages to its path. 
 site.addsitedir('/home/chrissyzic/.virtualenvs/findnickisverse/lib/python2.7/site-packages')
 
