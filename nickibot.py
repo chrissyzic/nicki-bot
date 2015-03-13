@@ -59,15 +59,7 @@ if most_recent:
     mentions = api.mentions_timeline(since_id=most_recent)
 else:
     mentions = ()
-'''
-new_most_recent = int(most_recent)
-
-print new_most_recent
-
-for mention in mentions:
-    if mention.id > most_recent:
-        most_recent = mention.id
-'''
+    print "No mentions, early end."
 
 #Loop through list of mentions since last tweet and assign the user's twitter handle and tweet content to their own variables
 for mention in mentions:
@@ -87,22 +79,3 @@ for mention in mentions:
                 else:
                     api.update_status(status=".@{0} Here's Nicki's verse on {1}: http://youtu.be/{2}?t={3}m{4}s".format(requester, title, d[title][3][32:], d[title][0][0], d[title][0][2:]))
 
-                
-'''
-#This uses a CSV with only two columns (song title and beginning time stamp). It only returns the start time of the verse, does not include a link to the veres on YouTube.
-
-import csv
-
-catalog = csv.reader(open('timestamps_2col.csv', 'r'))
-d = {}
-for song in catalog:
-    title, stamp_start = song
-    d[title] = stamp_start
-
-#Ask the user what they want to hear.
-#request = raw_input('What song do you want to hear Nicki on? ')
-
-for title in d:
-    if request.lower() == title.lower():
-        print "Nicki's verse starts at {0}".format(d[title])
-'''
