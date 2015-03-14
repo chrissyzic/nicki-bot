@@ -1,3 +1,9 @@
+Something in the first 17 lines of code is going wrong. Help!
+
+What happens if I change the name of files and folders in my Github repo for this project? 
+
+How do I change the name of a directory in WebFaction?
+
 How do I make tweepy be OK with repeat tweets?
 It's actually probably good that it's not
 
