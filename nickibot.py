@@ -26,10 +26,10 @@ auth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
 auth.set_access_token(ACCESS_KEY, ACCESS_SECRET)
 api = tweepy.API(auth)
 
-print '''
+print "
 -----START-----
 {0}{1:02d}{2:02d}-{3:02d}{4:02d}{5:02d}
----------------'''.format(*time.localtime()[:6])
+---------------".format(*time.localtime()[:6])
 
 #Import Python's CSV functions for file handling purposes and Python's random function for "Shuffle" requests
 import csv
@@ -57,6 +57,7 @@ most_recent = statuses[0]
 #Check for @ mentions since most recent status ID
 if most_recent:
     mentions = api.mentions_timeline(since_id=most_recent)
+    print mentions
 else:
     mentions = ()
     print "No mentions, early end."
