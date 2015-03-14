@@ -6,7 +6,7 @@ activate_this = os.path.expanduser("~/.virtualenvs/nicki-bot/bin/activate_this.p
 execfile(activate_this, dict(__file__=activate_this))
 
 # Calculate the path based on the location of the WSGI script
-project = '/home/chrissyzic/webapps/findnickisverse/findnickisverse/nicki-bot'
+project = '/home/chrissyzic/webapps/findnickisverse/findnickisverse/'
 workspace = os.path.dirname(project)
 sys.path.append(workspace)
 
