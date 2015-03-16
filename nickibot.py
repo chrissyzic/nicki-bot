@@ -6,7 +6,7 @@ activate_this = os.path.expanduser("~/.virtualenvs/nicki-bot/bin/activate_this.p
 execfile(activate_this, dict(__file__=activate_this))
 
 # Calculate the path based on the location of the WSGI script
-project = '/home/chrissyzic/webapps/findnickisverse/findnickisverse/'
+project = '/home/chrissyzic/webapps/findnickisverse/findnickisverse/nicki-bot'
 workspace = os.path.dirname(project)
 sys.path.append(workspace)
 
@@ -26,10 +26,10 @@ auth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
 auth.set_access_token(ACCESS_KEY, ACCESS_SECRET)
 api = tweepy.API(auth)
 
-#print "
-#-----START-----
-#{0}{1:02d}{2:02d}-{3:02d}{4:02d}{5:02d}
-#---------------".format(*time.localtime()[:6])
+print "
+-----START-----
+{0}{1:02d}{2:02d}-{3:02d}{4:02d}{5:02d}
+---------------".format(*time.localtime()[:6])
 
 #Import Python's CSV functions for file handling purposes and Python's random function for "Shuffle" requests
 import csv
