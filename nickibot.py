@@ -2,7 +2,7 @@ import os, site, sys
 # Tell wsgi to add the Python site-packages to its path. 
 site.addsitedir('/home/chrissyzic/.virtualenvs/nicki-bot/lib/python2.7/site-packages')
 
-activate_this = os.path.expanduser("~/.virtualenvs/nicki-bot/bin/activate_this.py")
+activate_this = os.path.expanduser("home/chrissyzic/.virtualenvs/nicki-bot/bin/activate_this.py")
 execfile(activate_this, dict(__file__=activate_this))
 
 # Calculate the path based on the location of the WSGI script
