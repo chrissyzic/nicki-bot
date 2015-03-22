@@ -54,7 +54,6 @@ most_recent = statuses[0]
 #Check for @ mentions since most recent status ID
 if most_recent:
     mentions = api.mentions_timeline(since_id=most_recent)
-    print mentions
 else:
     mentions = ()
     print "No mentions, early end."
