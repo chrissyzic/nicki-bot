@@ -1,3 +1,4 @@
+print "Crontab is working! Look at me, printing to a log."
 import os, site, sys
 # Tell wsgi to add the Python site-packages to its path. 
 site.addsitedir('~/.virtualenvs/nicki-bot/lib/python2.7/site-packages')
