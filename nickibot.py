@@ -1,36 +1,29 @@
-print "This is Line 1: Crontab is working"
 import os, site, sys
-print "This is Line 3: importing os, site, and sys worked."
 
 # Tell wsgi to add the Python site-packages to its path. 
 site.addsitedir('~/.virtualenvs/nicki-bot/lib/python2.7/site-packages')
-print "This is Line 7: site.addsitedir worked"
 
 activate_this = os.path.expanduser("~/.virtualenvs/nicki-bot/bin/activate_this.py")
-print "This is Line 10: activate_this worked"
 execfile(activate_this, dict(__file__=activate_this))
-print "This is Line 12: execfile worked"
 
 # Calculate the path based on the location of the WSGI script
 project = '/home/chrissyzic/webapps/findnickisverse/findnickisverse/nicki-bot'
 workspace = os.path.dirname(project)
 sys.path.append(workspace)
-print "This is Line 18: sys.path.append worked."
-#Tweepy Authentication
 
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
+#Tweepy Authentication
 
 #Import Tweepy (to authenticate with Twitter), Python's time and sys modules that Tweepy requires to run.
 #import tweepy #, time
-print "This is Line 26: import Tweepy and time worked."
 
 #Import credentials to authenticate with Twitter - these are stored in another file because they are SECRET. If they were public, anyone could tweet from my account.
 from nickibot_cred import CONSUMER_KEY, CONSUMER_SECRET, ACCESS_KEY, ACCESS_SECRET
-print "This is Line 30: successfully imported keys and secrets"
+print "This is Line 21: successfully imported keys and secrets"
+print CONSUMER_KEY
 
 #Authenticate with Twitter
 auth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
+print "This is Line 26: auth variable created successfully."
 auth.set_access_token(ACCESS_KEY, ACCESS_SECRET)
 api = tweepy.API(auth)
 
