@@ -14,8 +14,8 @@ workspace = os.path.dirname(project)
 sys.path.append(workspace)
 
 #Tweepy Authentication
-
 #Import Tweepy (to authenticate with Twitter), Python's time and sys modules that Tweepy requires to run.
+print "Line 18: everything pre-tweepy worked"
 import tweepy
 print "This is Line 20: import tweepy worked"
 
