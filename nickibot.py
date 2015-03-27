@@ -19,12 +19,12 @@ sys.path.append(workspace)
 #Import credentials to authenticate with Twitter - these are stored in another file because they are SECRET. If they were public, anyone could tweet from my account.
 from nickibot_cred import CONSUMER_KEY, CONSUMER_SECRET, ACCESS_KEY, ACCESS_SECRET
 print "This is Line 21: successfully imported keys and secrets"
-print CONSUMER_KEY
 
 #Authenticate with Twitter
 auth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
 print "This is Line 26: auth variable created successfully."
 auth.set_access_token(ACCESS_KEY, ACCESS_SECRET)
+
 api = tweepy.API(auth)
 
 print "Starting now."
