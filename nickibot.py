@@ -18,8 +18,8 @@ sys.path.append(workspace)
 print "This is Line 18: sys.path.append worked."
 #Tweepy Authentication
 
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
+!/usr/bin/env python
+ -*- coding: utf-8 -*-
 
 #Import Tweepy (to authenticate with Twitter), Python's time and sys modules that Tweepy requires to run.
 import tweepy, time
