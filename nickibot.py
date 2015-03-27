@@ -4,15 +4,18 @@ print "This is Line 3: importing os, site, and sys worked."
 
 # Tell wsgi to add the Python site-packages to its path. 
 site.addsitedir('~/.virtualenvs/nicki-bot/lib/python2.7/site-packages')
+print "This is Line 7: site.addsitedir worked"
 
 activate_this = os.path.expanduser("~/.virtualenvs/nicki-bot/bin/activate_this.py")
+print "This is Line 10: activate_this worked"
 execfile(activate_this, dict(__file__=activate_this))
+print "This is Line 12: execfile worked"
 
 # Calculate the path based on the location of the WSGI script
 project = '/home/chrissyzic/webapps/findnickisverse/findnickisverse/nicki-bot'
 workspace = os.path.dirname(project)
 sys.path.append(workspace)
-
+print "This is Line 18: sys.path.append worked."
 #Tweepy Authentication
 
 #!/usr/bin/env python
