@@ -22,12 +22,13 @@ print "This is Line 18: sys.path.append worked."
 # -*- coding: utf-8 -*-
 
 #Import Tweepy (to authenticate with Twitter), Python's time and sys modules that Tweepy requires to run.
-import tweepy #, time
+#import tweepy #, time
 print "This is Line 26: import Tweepy and time worked."
 
 #Import credentials to authenticate with Twitter - these are stored in another file because they are SECRET. If they were public, anyone could tweet from my account.
 from nickibot_cred import CONSUMER_KEY, CONSUMER_SECRET, ACCESS_KEY, ACCESS_SECRET
-
+print "This is Line 30: successfully imported keys and secrets"
+    
 #Authenticate with Twitter
 auth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
 auth.set_access_token(ACCESS_KEY, ACCESS_SECRET)
