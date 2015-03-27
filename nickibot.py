@@ -1,5 +1,5 @@
 print "This is Line 1: Off to a good start."
-import os, site, sys, tweepy
+import os, site, sys
 print "This is Line 3: All import stuff worked"
 
 # Tell wsgi to add the Python site-packages to its path. 
@@ -16,7 +16,8 @@ sys.path.append(workspace)
 #Tweepy Authentication
 
 #Import Tweepy (to authenticate with Twitter), Python's time and sys modules that Tweepy requires to run.
-#import tweepy #, time
+import tweepy
+print "This is Line 20: import tweepy worked"
 
 #Import credentials to authenticate with Twitter - these are stored in another file because they are SECRET. If they were public, anyone could tweet from my account.
 from nickibot_cred import CONSUMER_KEY, CONSUMER_SECRET, ACCESS_KEY, ACCESS_SECRET
