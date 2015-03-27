@@ -1,4 +1,6 @@
-import os, site, sys
+print "This is Line 1: We're good so far."
+import os, site, sys, tweepy
+print "This is Line 3: All import stuff worked"
 
 # Tell wsgi to add the Python site-packages to its path. 
 site.addsitedir('~/.virtualenvs/nicki-bot/lib/python2.7/site-packages')
