@@ -1,4 +1,4 @@
-print "This is Line 1: Off to a good start."
+print "It's a new day and this is Line 1: Off to a good start."
 import os, site, sys
 
 # Tell wsgi to add the Python site-packages to its path. 
@@ -8,28 +8,30 @@ activate_this = os.path.expanduser("~/.virtualenvs/newnicki/bin/activate_this.py
 execfile(activate_this, dict(__file__=activate_this))
 
 # Calculate the path based on the location of the WSGI script
+print "This is Line 11: exec file worked."
 project = '/home/chrissyzic/webapps/findnickisverse/findnickisverse'
+print "This is Line 13: new project path worked"
 workspace = os.path.dirname(project)
+print "This is Line 15: workspace defined OK with new project path"
 sys.path.append(workspace)
+print "This is Line 17: sys.path.append worked"
 
 #Tweepy Authentication
 #Import Tweepy (to authenticate with Twitter), Python's time and sys modules that Tweepy requires to run.
-print "Line 18: everything pre-tweepy worked"
+print "Line 21: everything pre-tweepy worked"
 import tweepy
-print "This is Line 20: import tweepy worked"
+print "This is Line 23: import tweepy worked"
 
 #Import credentials to authenticate with Twitter - these are stored in another file because they are SECRET. If they were public, anyone could tweet from my account.
 from nickibot_cred import CONSUMER_KEY, CONSUMER_SECRET, ACCESS_KEY, ACCESS_SECRET
-print "This is Line 23: successfully imported keys and secrets"
+print "This is Line 27: successfully imported keys and secrets"
 
 #Authenticate with Twitter
 auth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
-print "This is Line 27: auth variable created successfully."
+print "This is Line 31: auth variable created successfully."
 auth.set_access_token(ACCESS_KEY, ACCESS_SECRET)
 
 api = tweepy.API(auth)
-
-print "Starting now."
 
 #Import Python's CSV functions for file handling purposes and Python's random function for "Shuffle" requests
 import csv
