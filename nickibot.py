@@ -1,6 +1,5 @@
 print "This is Line 1: Off to a good start."
 import os, site, sys
-print "This is Line 3: All import stuff worked"
 
 # Tell wsgi to add the Python site-packages to its path. 
 site.addsitedir('~/.virtualenvs/newnicki/lib/python2.7/site-packages')
@@ -9,7 +8,7 @@ activate_this = os.path.expanduser("~/.virtualenvs/newnicki/bin/activate_this.py
 execfile(activate_this, dict(__file__=activate_this))
 
 # Calculate the path based on the location of the WSGI script
-project = '/home/chrissyzic/webapps/findnickisverse/findnickisverse/nicki-bot'
+project = '/home/chrissyzic/webapps/findnickisverse/findnickisverse'
 workspace = os.path.dirname(project)
 sys.path.append(workspace)
 
