@@ -2,9 +2,9 @@ print "It's a new day and this is Line 1: Off to a good start."
 import os, site, sys
 
 # Tell wsgi to add the Python site-packages to its path. 
-site.addsitedir('/home/chrissyzic/.virtualenvs/nicki-bot/lib/python2.7/site-packages')
+site.addsitedir('/home/chrissyzic/webapps/findnickisverse/findnickisverse/nickibot-new/lib/python2.7/site-packages')
 
-activate_this = os.path.expanduser("/home/chrissyzic/.virtualenvs/nicki-bot/bin/activate_this.py")
+activate_this = os.path.expanduser("/home/chrissyzic/webapps/findnickisverse/findnickisverse/nickibot-new/bin/activate_this.py")
 execfile(activate_this, dict(__file__=activate_this))
 
 # Calculate the path based on the location of the WSGI script
