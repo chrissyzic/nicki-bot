@@ -38,7 +38,7 @@ import csv
 import random
 
 #Open the timestamps spreadsheet as a file called "catalog" and create a dictionary called "d"
-catalog = csv.reader(open('timestamps.csv', 'r'))
+catalog = csv.reader(open('/home/chrissyzic/webapps/findnickisverse/findnickisverse/nicki-bot/timestamps.csv', 'r'))
 d = {}
 
 #In dictionary d, save each song title as a key and the timestamp data (verse start and verse end) and YouTube link as values associated with each key.
