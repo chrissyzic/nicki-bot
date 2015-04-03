@@ -77,7 +77,7 @@ for mention in mentions:
         for title in d: #Iterate through all the keys (song titles) in dictionary "d"
             if request.lower() == title.lower(): #If the request matches a key, return a YouTube link timestamped for when Nicki's verse starts
                 if d[title][0] == "0:00": #If her verse starts right at the beginning of the song, just share the bare YouTube link
-                    api.update_status(status=".@{0} Here's Nicki's verse on {1}: {2}".format(title, d[title][3]))
+                    api.update_status(status=".@{0} Here's Nicki's verse on {1}: {2}".format(requester, title, d[title][3]))
                 else:
                     api.update_status(status=".@{0} Here's Nicki's verse on {1}: http://youtu.be/{2}?t={3}m{4}s".format(requester, title, d[title][3][32:], d[title][0][0], d[title][0][2:]))
 
