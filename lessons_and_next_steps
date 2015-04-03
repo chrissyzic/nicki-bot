@@ -5,4 +5,6 @@ Next Steps:
 - Change shuffle conditional to "if "shuffle" in request.lower()"
 - Make the bot able to read mentions that start with a . 
 - Autofollow anyone who mentions findnickisverse
+- Analyze which songs have longer Nicki verses
+- Weight the "shuffle" feature so that it returns longer Nicki verse more often
 - Tweet an error to people who don't match a song title "didn't get that - try tweeting just the song title, no quotes or artist names please!
