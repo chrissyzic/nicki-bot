@@ -1,5 +1,7 @@
 Lessons:
 - Get the right version of tweepy
+- To debug: add a print statement after every single line and see where the code stops running
+- You can also run the file in interactive mode (python -i [filename].py) to see the errors...can't remember if virtualenv needs to be activated for this
 
 Next Steps:
 - Change shuffle conditional to "if "shuffle" in request.lower()"
