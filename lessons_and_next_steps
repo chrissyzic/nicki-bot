@@ -1,0 +1,7 @@
+Lessons:
+- Get the right version of tweepy
+
+Next Steps:
+- Change shuffle conditional to "if "shuffle" in request.lower()"
+- Autofollow anyone who mentions findnickisverse
+- Tweet an error to people who don't match a song title "didn't get that - try tweeting just the song title, no quotes or artist names please!
