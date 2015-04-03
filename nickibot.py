@@ -19,11 +19,9 @@ import tweepy
 
 #Import credentials to authenticate with Twitter - these are stored in another file because they are SECRET. If they were public, anyone could tweet from my account aka BAD NEWS.
 from nickibot_cred import CONSUMER_KEY, CONSUMER_SECRET, ACCESS_KEY, ACCESS_SECRET
-print "This is Line 27: successfully imported keys and secrets"
 
 #Authenticate with Twitter
 auth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
-print "This is Line 31: auth variable created successfully."
 auth.set_access_token(ACCESS_KEY, ACCESS_SECRET)
 
 api = tweepy.API(auth)
@@ -76,4 +74,3 @@ for mention in mentions:
                     api.update_status(status=".@{0} Here's Nicki's verse on {1}: {2}".format(requester, title, d[title][3]))
                 else:
                     api.update_status(status=".@{0} Here's Nicki's verse on {1}: http://youtu.be/{2}?t={3}m{4}s".format(requester, title, d[title][3][32:], d[title][0][0], d[title][0][2:]))
-
