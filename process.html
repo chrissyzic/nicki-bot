@@ -1,0 +1,36 @@
+Someone on TLM asked for a blog post documenting how I created @findnickisverse. I didn't totally keep track of what I did as I was making it, but it was recent enough that I can backtrack and get the general milestones down. If I'm going to present at <a href="http://www.meetup.com/DC-Hack-and-Tell/">DC Hack & Tell</a> this month, I'll have to practice telling this story anyway, so here we go!
+
+<strong>First Step: Create the Database</strong>
+I got this idea from a Tumblr post sometime in January and when the wonderful Shannon Turner asked if I had any projects I wanted to work on to help solidify some of the Python I'd been learning, it was the first one that jumped to mind. I quickly realized there was no database with all the info I needed and that I was going to have to build it myself. Which meant listening to hours of Nicki Minaj verses aka sign me up.
+
+Luckily, I found this list of every song Nicki Minaj is featured on. I dumped those titles into an Excel doc, saved it as a CSV, and got to work cataloging the timestamps of Nicki's verse for each song. Once I found that some of the songs weren't on Spotify, I started looking them up on YouTube and realized that I could use YouTube's URL parameter that jumps to a certain second in a video to send people a link that started right at Nicki's verse, rather than just sending a tweet that said "Nicki's verse starts at 2:13" (which could vary based on which version of the song you have and what system you're using to listen). So I added a column to my CSV for a YouTube link to each song.
+
+All in all, it took me about three weeks to catalog the 150+ songs Nicki Minaj is featured on and to come up with alternative ways people could search for/spell each title. I could have gotten really crazy with that last part, but I basically stuck to making sure every song with "remix" in the title had three variations, e.g.:
+Flawless
+Flawless (Remix)
+Flawless Remix
+
+Then I just used common sense, so for example, making an entry for "20 Dollarz" (the actual spelling) and "20 Dollars" (what I would write because I'm not cool). Like I said, there is a <em>lot</em> more I could do to this end but it was tedious and it's my project and I didn't feel like spending that much energy on that part!
+
+<a href="">You can see the completed database here on my Github/</a>
+One challenge I am still facing is how to keep the database updated since she is guesting on new songs all the time. It'd be great to automate the process somehow (or at least alert 
+
+<strong>Next Step: Dictionaries and Loops</strong>
+Once the database was mostly put together, I used Python to created a program that opened by CSV catalog with all of Nicki's songs as a dictionary (Lines XX-YY). Then, it took a request from the user (using raw_input) and looped through all the keys in the dictionary, checking if any of the keys matched the request. If it did, it printed out the key and the timestamped YouTube link, which I printed out using .format. If the user request was "shuffle" I used Python's "random" function to send back a random song and link from the database (Line ZZ)
+
+This was really the backbone of the program and I made sure it was working the way I wanted it to (in terms of throwing errors and other functionality) before I started trying to interact with Twitter in any way.
+
+<strong>After That: Figure Out How Tweepy Works</strong>
+Eventually, I had to face the beast that was Twitter authentication. But honestly, Tweepy's authentication tutorial made it very easy, once I found where I had to go on dev.twitter.com to get my consumer key and secret (it's on the very bottom right under TOOLS > Manage Your Apps > Create New App).
+
+Using Tweepy's documentation and the code from Shannon's Bechdel Bot, I learned how to check my mentions since my most recent tweet and store them as a list. The, using my existing Python code, I looped through the list of mentions and checked if they matched any of the keys in my dictionary of Nicki songs (or if they said "shuffle"). Then, I replaced all my "print" commands with "api.update_status" which would tweet a reply with the timestamped YouTube link.
+
+<strong>Last Step: Get It Up On A Server</strong>
+To be honest, I almost gave up at this stage. And I say this to encourage anyone who is stuck on a project to <em>keep going</em>. I was lucky to have a great community and supportive mentor to answer my questions and keep my spirits up, but I definitely cried at least once when I thought everything was deployed but then it failed...and then  
+
+<strong>Remaining Challenges:</strong>
+- Automate updating of the database: Nicki is guesting on new songs all the time and adding those new tracks to the database requires me to know they're 
+- YouTube taking down videos
+- Predicting all the ways people will spell/misspell titles
+- Deciding if I want to send error messages
+- 
